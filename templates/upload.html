@@ -1,110 +1,103 @@
-<xaiArtifact
-  artifact_id="3e25dbac-8f52-4413-9388-92ee6b49143f"
-  artifact_version_id="4412d2dd-6429-4979-bfda-a1c1d1101b02"
-  title="upload.html"
-  contentType="text/html"
->
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Upload Files</title>
-      <style>
-        body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 20px;
-          background-color: #f4f4f4;
-        }
-        .container {
-          max-width: 600px;
-          margin: auto;
-          background: white;
-          padding: 20px;
-          border-radius: 5px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-          text-align: center;
-          color: #333;
-        }
-        .form-group {
-          margin-bottom: 15px;
-        }
-        label {
-          display: block;
-          margin-bottom: 5px;
-          font-weight: bold;
-        }
-        input[type="file"] {
-          width: 100%;
-          padding: 8px;
-          border: 1px solid #ddd;
-          border-radius: 4px;
-        }
-        button {
-          display: block;
-          width: 100%;
-          padding: 10px;
-          background-color: #28a745;
-          color: white;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-        }
-        button:hover {
-          background-color: #218838;
-        }
-        .error {
-          color: red;
-          margin-bottom: 15px;
-        }
-      </style>
-    </head>
-    <body>
-      <div class="container">
-        <h1>Upload Excel Files</h1>
-        {% with messages = get_flashed_messages() %} {% if messages %} {% for
-        message in messages %}
-        <p class="error">{{ message }}</p>
-        {% endfor %} {% endif %} {% endwith %}
-        <form method="post" enctype="multipart/form-data">
-          <div class="form-group">
-            <label for="old_to_new"
-              >Old to New EPIC (Mallisala Old to New.xlsx):</label
-            >
-            <input
-              type="file"
-              id="old_to_new"
-              name="old_to_new"
-              accept=".xlsx"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="data_2025">2025 Data (Mallisala.xlsx):</label>
-            <input
-              type="file"
-              id="data_2025"
-              name="data_2025"
-              accept=".xlsx"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="data_2002">2002 Data (Mallisala2002.xlsx):</label>
-            <input
-              type="file"
-              id="data_2002"
-              name="data_2002"
-              accept=".xlsx"
-              required
-            />
-          </div>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    </body>
-  </html></xaiArtifact
->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Files</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      input[type="file"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #218838;
+      }
+      .error {
+        color: red;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Upload Excel Files</h1>
+      {% with messages = get_flashed_messages() %} {% if messages %} {% for
+      message in messages %}
+      <p class="error">{{ message }}</p>
+      {% endfor %} {% endif %} {% endwith %}
+      <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="old_to_new"
+            >Old to New EPIC (Mallisala Old to New.xlsx):</label
+          >
+          <input
+            type="file"
+            id="old_to_new"
+            name="old_to_new"
+            accept=".xlsx"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="data_2025">2025 Data (Mallisala.xlsx):</label>
+          <input
+            type="file"
+            id="data_2025"
+            name="data_2025"
+            accept=".xlsx"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="data_2002">2002 Data (Mallisala2002.xlsx):</label>
+          <input
+            type="file"
+            id="data_2002"
+            name="data_2002"
+            accept=".xlsx"
+            required
+          />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
