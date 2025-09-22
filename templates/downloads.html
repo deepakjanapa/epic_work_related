@@ -1,0 +1,177 @@
+<xaiArtifact
+  artifact_id="1715c0e7-5062-411f-a273-36de3cf3f011"
+  artifact_version_id="8097d8dc-5c90-41e0-be8f-16a6374bdc5c"
+  title="downloads.html"
+  contentType="text/html"
+>
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Download Files</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 20px;
+          background-color: #f4f4f4;
+        }
+        .container {
+          max-width: 800px;
+          margin: auto;
+          background: white;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+          text-align: center;
+          color: #333;
+        }
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 20px;
+        }
+        th,
+        td {
+          padding: 10px;
+          border: 1px solid #ddd;
+          text-align: left;
+        }
+        th {
+          background-color: #f2f2f2;
+        }
+        .download-btn {
+          display: inline-block;
+          padding: 8px 16px;
+          background-color: #007bff;
+          color: white;
+          text-decoration: none;
+          border-radius: 4px;
+        }
+        .download-btn:hover {
+          background-color: #0056b3;
+        }
+        .upload-again {
+          display: block;
+          text-align: center;
+          margin-top: 20px;
+          color: #007bff;
+          text-decoration: none;
+        }
+        .upload-again:hover {
+          text-decoration: underline;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <h1>Download Processed Files</h1>
+        <table>
+          <tr>
+            <th>File</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>
+              <a
+                href="{{ url_for('download', filename='data mapping.xlsx') }}"
+                class="download-btn"
+                >Download data mapping.xlsx</a
+              >
+            </td>
+            <td>
+              Contains all records merged from Old to New EPIC, 2025, and 2002
+              data using EPIC number mappings.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                href="{{ url_for('download', filename='data_mapping_name_match.xlsx') }}"
+                class="download-btn"
+                >Download data_mapping_name_match.xlsx</a
+              >
+            </td>
+            <td>
+              Contains records from data mapping.xlsx where Name (2025) matches
+              Name (2002).
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                href="{{ url_for('download', filename='data_mapping_name_match_direct.xlsx') }}"
+                class="download-btn"
+                >Download data_mapping_name_match_direct.xlsx</a
+              >
+            </td>
+            <td>
+              Contains records where Name (2025) matches Name (2002) directly
+              from 2025 and 2002 data, using name as the primary key.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                href="{{ url_for('download', filename='data_mapping_merged.xlsx') }}"
+                class="download-btn"
+                >Download data_mapping_merged.xlsx</a
+              >
+            </td>
+            <td>
+              Combines data mapping.xlsx and
+              data_mapping_name_match_direct.xlsx, with duplicates removed.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                href="{{ url_for('download', filename='data_mapping_merged_cleaned.xlsx') }}"
+                class="download-btn"
+                >Download data_mapping_merged_cleaned.xlsx</a
+              >
+            </td>
+            <td>
+              Contains records from data_mapping_merged.xlsx with non-null and
+              non-empty Name (2025) and Name (2002).
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                href="{{ url_for('download', filename='data_mapping_unique_part_serial.xlsx') }}"
+                class="download-btn"
+                >Download data_mapping_unique_part_serial.xlsx</a
+              >
+            </td>
+            <td>
+              Contains records from data_mapping_merged_cleaned.xlsx with unique
+              PART NO (2025) and SERIAL NO IN PART (2025) combinations, keeping
+              the first occurrence.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                href="{{ url_for('download', filename='data_mapping_unique_relation_name.xlsx') }}"
+                class="download-btn"
+                >Download data_mapping_unique_relation_name.xlsx</a
+              >
+            </td>
+            <td>
+              Contains records from data_mapping_merged_cleaned.xlsx with unique
+              Relation Name (2025), keeping the first occurrence.
+            </td>
+          </tr>
+        </table>
+        <a href="{{ url_for('index') }}" class="upload-again"
+          >Upload Another Set of Files</a
+        >
+      </div>
+    </body>
+  </html></xaiArtifact
+>
